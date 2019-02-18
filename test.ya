@@ -1,0 +1,21 @@
+
+
+
+
+print "hello"
+
+
+
+
+print "enter a number between 1 and 10 " 
+
+
+input "Number: " a
+
+
+print a + 1
+
+
+
+
+
