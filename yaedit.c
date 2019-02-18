@@ -1,5 +1,5 @@
 
- 
+////////////////////////////////////////////////////////////////////////////////////////
 // To compile: tcc or gcc or cc;   cc -lncurses -lm editor.c -o editor 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -588,7 +588,7 @@ void showstatus(void)
     int foxy;
     color_c2(); 
     gfxhline( 0, 0, cols-1 , ' ' );
-    mvprintw( 0, 0, "|MEDIT v%0.1f|by Spartrekus (GNU)|  [FILE:%s]", editor_version , file_name );
+    mvprintw( 0, 0, "|YAEDIT v%0.1f|by Spartrekus (GNU)|  [FILE:%s]", editor_version , file_name );
 
     color_c2(); 
     for( foxy=0; foxy++; foxy <= cols-3 ) mvprintw( rows-1, foxy , " " );
@@ -1094,8 +1094,7 @@ int main (int argv, char **argc)
 {
   int i, ch;
   if ( strcmp( file_name, "" ) == 0 )   strncpy( file_name, "noname.c" , STRMAX );
-  // init();
-  //initscr();	
+
 	signal (SIGINT, done);
 	initscr ();
 	keypad (stdscr, TRUE);
@@ -1147,11 +1146,11 @@ int main (int argv, char **argc)
         getmaxyx( stdscr, rows , cols);
         clearscreen();
         color_c2();
-        mvcenter( rows/2 , "MEDIT: The Unimark Editor" );
+        mvcenter( rows/2 , "YAEDIT: The Basic Programming Editor" );
+        mvcenter( rows/2 +2  , "<Press Enter>" );
         getch();
         
 
-	//for (;;) 
         int gameover = 0;
         while( gameover == 0 ) 
         {
